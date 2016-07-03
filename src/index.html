@@ -1,0 +1,27 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Incentro - Angular 1.x training</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body ng-app="incentro" ng-controller="incentroController">
+        <p>Hallo {{supermarketName}}</p>
+        <form>
+            <fieldset>
+                <input type="text" name="name" ng-model="supermarketName">
+            </fieldset>
+        </form>
+
+        <ul>
+            <li ng-repeat="product in products track by $index">{{product.name}} - ({{product.quantity}})</li>
+        </ul>
+
+        <shoppingcart-component supermarket-name="supermarketName"></shoppingcart-component>
+
+        <script src="js/angular.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
